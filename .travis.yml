@@ -3,5 +3,4 @@ node_js:
   - 0.10
 before_install:
   - wget http://johnvansickle.com/ffmpeg/releases/ffmpeg-2.0.1-64bit-static.tar.bz2
-  - tar -xvf ffmpeg-2.0.1-64bit-static.tar.bz2
-  - echo "" | sudo mv ffmpeg-2.0.1.64bit-static/ffmpeg /usr/local/bin/ffmpeg
+  - tar -xvf ffmpeg-2.0.1-64bit-static.tar.bz2 && cd ffmpeg-2.0.1.64bit-static && sudo mv ffmpeg /usr/local/bin/ffmpeg
