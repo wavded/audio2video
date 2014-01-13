@@ -1,0 +1,28 @@
+{
+  "name": "audio2video",
+  "version": "0.0.0",
+  "description": "Streaming audio to video converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap -d ./test/e2e.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wavded/audio2video.git"
+  },
+  "keywords": [
+    "audio",
+    "video",
+    "ffmpeg",
+    "convert"
+  ],
+  "author": "Marc Harter <wavded@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wavded/audio2video/issues"
+  },
+  "homepage": "https://github.com/wavded/audio2video",
+  "devDependencies": {
+    "tap": "~0.4.8"
+  }
+}
