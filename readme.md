@@ -4,7 +4,7 @@ audio2video will convert any ffmpeg supported input audio stream into a output v
 
 ## Requirements
 
-audio2video requires the command line tool *ffmpeg* - [ffmpeg install page](http://ffmpeg.org/download.html)
+audio2video requires the command line tool *ffmpeg* - [ffmpeg install page](http://ffmpeg.org/download.html).  It has been tested on 2.x branch.
 
 ## Installation
 
