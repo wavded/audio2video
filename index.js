@@ -31,6 +31,7 @@ module.exports = function (istream) {
   istream.on('error', error)
 
   var paths = genPaths() // ffmpeg pipes are not reliable, opting for tmp files instead
+  ostream.path = paths.out
 
   istream.pipe(fs.createWriteStream(paths.in))
     .on('finish', function () {
