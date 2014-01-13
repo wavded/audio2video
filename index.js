@@ -8,6 +8,7 @@ var audioBg = __dirname + '/audio-background.jpg'
 var baseTmpFile = path.join(require('os').tmpdir(), 'foi' + require('crypto').randomBytes(10).toString('hex'))
 var tmpFileCt = 0
 
+function noop (){}
 function genPaths () {
   tmpFileCt++
   return {
@@ -17,8 +18,8 @@ function genPaths () {
 }
 
 function cleanPaths (paths) {
-  fs.unlink(paths.in, console.error)
-  fs.unlink(paths.out, console.error)
+  fs.unlink(paths.in, noop)
+  fs.unlink(paths.out, noop)
 }
 
 module.exports = function (istream) {
@@ -51,8 +52,10 @@ module.exports = function (istream) {
       ffmpeg.stderr.on('data', function (chunk) { ostream.emit('ffmpeginfo', chunk) })
 
       ffmpeg.on('close', function () {
-        fs.createReadStream(paths.out).pipe(ostream) // push data to output stream
-          .on('finish', function () { cleanPaths(paths) }) // clean up tmp files
+        var rs = fs.createReadStream(paths.out)
+        rs.on('error', error).on('end', function () { cleanPaths(paths) }) // clean up tmp files
+
+        rs.pipe(ostream) // push data to output stream
       })
     })
 
