@@ -1,4 +1,4 @@
-# audio2video [![Build Status](https://secure.travis-ci.org/wavded/audio2video.png)](http://travis-ci.org/wavded/audio2video)
+# audio2video [![Build Status](https://secure.travis-ci.org/wavded/audio2video.svg)](http://travis-ci.org/wavded/audio2video)
 
 audio2video will convert any ffmpeg supported input audio stream into a output video stream (codec: mp4).
 
@@ -27,7 +27,7 @@ audio2video(input).pipe(fs.createWriteStream('./out.mp4'))
 
 (The MIT License)
 
-Copyright (c) 2014 Marc Harter &lt;wavded@gmail.com&gt;
+Copyright (c) 2015 Marc Harter &lt;wavded@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
